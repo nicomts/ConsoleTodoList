@@ -27,7 +27,10 @@ static void ShowHelp()
 static void NewTodoItem(TodoManager todoManager, string[] args)
 {
     if (args.Length > 1)
-        todoManager.AddTodoItem(string.Join(" ", args.Skip(1)));
+    {
+        string task = string.Join(" ", args.Skip(1));
+        todoManager.AddTodoItem(task);
+    }
     else
         Console.WriteLine("Please provide a task.");
 }
